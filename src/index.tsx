@@ -3,14 +3,15 @@ import { render } from "solid-js/web";
 
 import "./index.css";
 import App from "./App";
-// import { Router, Route } from "@solidjs/router";
+import { Router, Route } from "@solidjs/router";
+import Online from "./Online";
 
 render(
   () => (
-    <App />
-    // <Router>
-    //   <Route path="/" component={App} />
-    // </Router>
+    <Router>
+      <Route path="/" component={App} />
+      <Route path="/online" component={Online} />
+    </Router>
   ),
   document.getElementById("root")!,
 );

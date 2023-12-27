@@ -41,10 +41,6 @@ function App() {
     }
   };
 
-  // const preventUpdate = (event: MouseEvent) => {
-  //   event.stopPropagation();
-  // };
-
   onMount(() => {
     updateNumber();
     window.addEventListener("keydown", handleKeyDown);

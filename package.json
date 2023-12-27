@@ -3,21 +3,26 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "wrangler pages dev -- vite",
+    "dev:static": "vite",
+    "build": "export && tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@solidjs/router": "^0.10.5",
+    "nanoid": "^5.0.4",
     "solid-js": "^1.8.7"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "@tauri-apps/cli": "^1.5.8",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "tailwindcss": "^3.3.7",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
-    "vite-plugin-solid": "^2.8.0"
+    "vite-plugin-solid": "^2.8.0",
+    "wrangler": "^3.22.0"
   }
 }

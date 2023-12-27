@@ -1,0 +1,13 @@
+name = "worker"
+
+
+workers_dev = false
+
+kv_namespaces = [
+    { binding = "KV", id = "test" }
+]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "test"
+database_id = "test"
