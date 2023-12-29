@@ -3,20 +3,33 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "wrangler pages dev -- vite",
+    "dev": "wrangler pages dev --compatibility-date=2023-10-23 -- vite",
     "dev:static": "vite",
     "build": "export && tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate": "drizzle-kit generate:sqlite"
   },
+  "prettier": "@aprilnea/prettier",
   "dependencies": {
     "@solidjs/router": "^0.10.5",
+    "@trpc/client": "^10.45.0",
+    "@trpc/server": "^10.45.0",
+    "@types/js-cookie": "^3.0.6",
+    "cookie": "^0.6.0",
+    "drizzle-orm": "^0.29.2",
+    "js-cookie": "^3.0.5",
     "nanoid": "^5.0.4",
-    "solid-js": "^1.8.7"
+    "solid-js": "^1.8.7",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@aprilnea/prettier": "^0.2.1",
     "@cloudflare/workers-types": "^4.20231218.0",
     "@tauri-apps/cli": "^1.5.8",
+    "@types/cookie": "^0.6.0",
     "autoprefixer": "^10.4.16",
+    "clsx": "^2.0.0",
+    "drizzle-kit": "^0.20.9",
     "postcss": "^8.4.32",
     "prettier": "^3.1.1",
     "tailwindcss": "^3.3.7",

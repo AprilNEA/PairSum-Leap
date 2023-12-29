@@ -1,8 +1,7 @@
-name = "worker"
-
+name = "pairsum-leap"
+compatibility_date = "2023-10-30"
 
 workers_dev = false
-
 kv_namespaces = [
     { binding = "KV", id = "test" }
 ]

@@ -1,17 +1,22 @@
 /* @refresh reload */
-import { render } from "solid-js/web";
+import { render } from 'solid-js/web'
 
-import "./index.css";
-import App from "./App";
-import { Router, Route } from "@solidjs/router";
-import Online from "./Online";
+import './index.css'
+
+import { Route, Router } from '@solidjs/router'
+
+import Layout from './layout'
+import Game from './pages/game.tsx'
+import Login from './pages/login.tsx'
+import Rank from './pages/rank'
 
 render(
   () => (
-    <Router>
-      <Route path="/" component={App} />
-      <Route path="/online" component={Online} />
+    <Router root={Layout}>
+      <Route path="/" component={Game} />
+      <Route path="/login" component={Login} />
+      <Route path="/rank" component={Rank} />
     </Router>
   ),
-  document.getElementById("root")!,
-);
+  document.getElementById('root')!,
+)
