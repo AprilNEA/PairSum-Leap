@@ -18,12 +18,15 @@ export const createContext = async (
   }
 
   function setId(id: string | null) {
-    resHeaders.append(
-      'Set-Cookie',
-      serialize('ID', id, {
-        expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
-      }),
-    )
+    if (!id) {
+    } else {
+      resHeaders.append(
+        'Set-Cookie',
+        serialize('ID', id, {
+          expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365),
+        }),
+      )
+    }
   }
 
   return {

@@ -27,8 +27,9 @@ function _Sign({ isNew }: { isNew: boolean }) {
         password: password(),
         isNew,
       })
-      .then(() => {
+      .then(({ username }) => {
         localStorage.setItem('isLogin', 'true')
+        localStorage.setItem('username', username)
         navigate('/')
       })
       .catch((e) => {

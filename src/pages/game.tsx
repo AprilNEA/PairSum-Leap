@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import Cookies from 'js-cookie'
-import { createMemo, createSignal, onCleanup, onMount } from 'solid-js'
+import { createMemo, createSignal, onCleanup, onMount, Show } from 'solid-js'
 
 import { client } from '../lib/trpc.ts'
 
@@ -87,9 +87,19 @@ function Game() {
         class={clsx('absolute left-0 top-0 pl-2 pt-1', 'text-gray-500')}
         onClick={stopPropagation}
       >
-        <a href="login">
-          <p class={styles.underline}>Login</p>
-        </a>
+        <Show
+          when={isLogin()}
+          fallback={
+            <a href="login" class={styles.underline}>
+              <p>Login</p>
+            </a>
+          }
+        >
+          <a>
+            <p class={styles.underline}>{localStorage.getItem('username')}</p>
+          </a>
+        </Show>
+
         <select
           class={clsx(
             'appearance-none border-none outline-none',

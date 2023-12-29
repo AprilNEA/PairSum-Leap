@@ -52,5 +52,6 @@ export const userRouter = trpc.router({
       const id = nanoid()
       await ctx.kv.put(`${id}:userId`, user.id.toString())
       ctx.setId(id)
+      return { username }
     }),
 })

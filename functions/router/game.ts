@@ -22,7 +22,7 @@ export const gameRouter = trpc.router({
         score: 0,
         sequence: [],
       }
-      if (game.sequence.length === 3) {
+      if (answer && game.sequence.length === 3) {
         if (game.sequence[0] + game.sequence[2] === parseInt(answer, 10)) {
           game.score += 1
         } else if (game.score > 0) {
