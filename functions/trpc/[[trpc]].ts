@@ -8,6 +8,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
     endpoint: '/trpc',
     req: context.request,
     router: appRouter,
+    // @ts-ignore
     createContext: (opts) => createContext(opts, context),
   })
 }

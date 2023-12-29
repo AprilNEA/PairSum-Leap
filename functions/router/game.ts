@@ -26,10 +26,10 @@ export const gameRouter = trpc.router({
         if (game.sequence[0] + game.sequence[2] === parseInt(answer, 10)) {
           game.score += 1
         } else if (game.score > 0) {
-          const userId = parseInt(await ctx.kv.get(`${ctx.id}:userId`))
+          const userId = await ctx.kv.get(`${ctx.id}:userId`)
           if (userId) {
             await ctx.db.insert(scores).values({
-              userId: userId,
+              userId: parseInt(userId),
               difficulty: 'Medium',
               score: game.score,
             })

@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "useDefineForClassFields": true,
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "esnext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -19,12 +23,13 @@
     //    "noUnusedLocals": true,
     //    "noUnusedParameters": true,
     //    "noFallthroughCasesInSwitch": true
+    "types": [
+      "@cloudflare/workers-types"
+    ]
   },
   "include": [
     "src",
-  ],
-  "exclude": [
-    "functions/**/*"
+    "functions"
   ],
   "references": [
     {
